@@ -1,0 +1,168 @@
+:root{
+    --dark-blue: hsl(233, 47%, 7%);
+    --desaturate-blue: hsl(244, 38%, 16%);
+    --soft-violet: hsl(277, 64%, 61%);
+
+    --white: hsl(0, 0%, 100%);
+    --slight-white: hsla(0, 0%, 100%, 0.75);
+    --slight-transparent: hsla(0, 0%, 100%, 0.6);
+
+    --font-sizedefault: 15px;
+    --font-big: 2rem;
+
+    --medium-weight: 400;
+    --high-weight: 700;
+
+    --bottom-padding: 3rem; 
+}
+
+/*Variables for Kevin Powell this helped me alot gonna used it in future proyects*/
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+
+* {
+    margin: 0;
+}
+
+html,
+body {
+    height: 100%;
+}
+
+body {
+    line-height: 1.7;
+    -webkit-font-smoothing: antialiased;
+}
+
+
+img,
+picture,
+video,
+canvas,
+svg {
+    display: inherit;
+    max-width: 100%;
+}
+
+
+input,
+button,
+textarea,
+select {
+    font: inherit;
+}
+
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    overflow-wrap: break-word;
+}
+
+h1,
+h2,
+h3 {
+    line-height: 1;
+}
+
+/*variables end*/
+
+body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    flex-direction: column;
+    text-align: center;
+    background-color: var(--dark-blue);
+    color: var(--white);
+    font-family: 'Inter', sans-serif;
+    padding: 5rem;
+}
+
+.main-article {
+    flex-wrap: wrap;
+    background-color: var(--desaturate-blue);
+    border-radius: 15px;
+    max-width: 600px;
+    overflow: hidden;
+}
+
+.container {
+    display: grid;
+    padding: 2rem;
+}
+
+.pics{
+    background-color: var(--soft-violet);
+    object-fit: cover;
+}
+
+.pics > img{
+    min-width: 100%;
+    mix-blend-mode: multiply;
+    opacity: .70;
+}
+
+.texts{
+    font-size: var(--font-sizedefault);
+    color: var(--slight-transparent);
+}
+
+.text2{
+    text-transform: uppercase;
+    letter-spacing: 0.2rem;
+    font-weight: var(--high-weight);
+    font-family: 'Lexend Deca', sans-serif;
+    color: var(--slight-white);
+    font-size: 0.8rem;
+}
+
+.header{
+    font-size: var(--font-big);
+}
+
+.bright{
+    color: var(--soft-violet);
+}
+
+
+@media (min-width: 850px){
+    .main-article {
+        text-align: left;
+        position: relative;
+        display: flex;
+        flex-direction: row-reverse;
+        max-width: 1000px;
+    }
+
+    .pics, .container {
+        width: min(50%, 700px);
+        flex-grow: 1;
+        overflow: hidden;
+    }
+
+    .exp {
+        display: flex;
+        gap: 2.5rem;
+        margin-top: auto;
+        align-self: flex-start;
+    }
+}
+
+@media (max-width: 850px){
+    .exp{
+        padding: 1rem;
+    }
+
+    .company{
+        padding-top: 1.5rem;
+    }
+}
